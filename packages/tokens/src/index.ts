@@ -1,6 +1,6 @@
 /**
  * Universal DS — Token TypeScript exports
- * Generated 2026-05-29. Do not edit directly.
+ * Generated 2026-05-30. Do not edit directly.
  *
  * CSS variable helper — resolves a token name to its CSS var() reference.
  * Use in React components via inline style or CSS-in-JS where Tailwind is unavailable.
@@ -13,7 +13,7 @@
 export const UDS_VAR_PREFIX = '--uds-' as const;
 
 /** Total token count generated from source (informational). */
-export const TOKEN_COUNT = 511 as const;
+export const TOKEN_COUNT = 513 as const;
 
 /**
  * Resolve a UDS CSS variable name to a var() reference.
