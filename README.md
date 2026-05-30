@@ -124,7 +124,7 @@ All components pass axe-core at the Critical and Serious levels. A11y is a CI ga
 
 ## Browse the components
 
-Storybook playground: [https://universal-ds.vercel.app](https://universal-ds.vercel.app)
+Storybook playground: [https://universal-ds-docs.vercel.app](https://universal-ds-docs.vercel.app)
 
 Each story includes:
 - All variants rendered side by side
