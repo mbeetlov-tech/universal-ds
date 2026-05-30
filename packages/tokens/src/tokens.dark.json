@@ -1,0 +1,130 @@
+{
+  "$schema": "https://design-tokens.org/community-group/format/schema.json",
+  "$description": "Universal DS — DARK THEME overrides. Same semantic names as tokens.json, different primitive references. Style Dictionary builds two CSS scopes: :root (light from tokens.json) + [data-theme=dark] (this file). Primitive tier NOT redefined here — same palette is referenced. See architecture.md §5. VISUAL HIERARCHY (0.3.0): `color.background.page` (slate.950) is bottom layer; `color.background.surface` (slate.900) is elevated content surface; `color.background.raised` (slate.800) is floating overlay above surface. Same nesting rule as light theme — see tokens.json for full description.",
+  "$version": "0.3.0",
+
+  "color": {
+    "background": {
+      "page":                       { "$value": "{palette.slate.950}", "$type": "color" },
+      "surface":                    { "$value": "{palette.slate.900}", "$type": "color" },
+      "raised":                     { "$value": "{palette.slate.800}", "$type": "color" },
+      "sunken":                     { "$value": "{palette.black}",     "$type": "color" },
+      "subtle":                     { "$value": "{palette.slate.800}", "$type": "color" },
+      "subtle.hovered":             { "$value": "{palette.slate.700}", "$type": "color" },
+      "subtle.pressed":             { "$value": "{palette.slate.600}", "$type": "color" },
+      "disabled":                   { "$value": "{palette.slate.800}", "$type": "color" },
+      "ghost.hovered":              { "$value": "{palette.slate.800}", "$type": "color" },
+      "ghost.pressed":              { "$value": "{palette.slate.700}", "$type": "color" },
+      "primary": {
+        "bold":                     { "$value": "{palette.blue.500}", "$type": "color" },
+        "bold.hovered":             { "$value": "{palette.blue.400}", "$type": "color" },
+        "bold.pressed":             { "$value": "{palette.blue.300}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.blue.950}", "$type": "color" },
+        "subtle.hovered":           { "$value": "{palette.blue.900}", "$type": "color" },
+        "subtle.pressed":           { "$value": "{palette.blue.800}", "$type": "color" }
+      },
+      "danger": {
+        "bold":                     { "$value": "{palette.red.500}", "$type": "color" },
+        "bold.hovered":             { "$value": "{palette.red.400}", "$type": "color" },
+        "bold.pressed":             { "$value": "{palette.red.300}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.red.950}", "$type": "color" },
+        "subtle.hovered":           { "$value": "{palette.red.900}", "$type": "color" },
+        "subtle.pressed":           { "$value": "{palette.red.800}", "$type": "color" }
+      },
+      "success": {
+        "bold":                     { "$value": "{palette.green.500}", "$type": "color" },
+        "bold.hovered":             { "$value": "{palette.green.400}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.green.950}", "$type": "color" },
+        "subtle.hovered":           { "$value": "{palette.green.900}", "$type": "color" }
+      },
+      "warning": {
+        "bold":                     { "$value": "{palette.amber.500}", "$type": "color" },
+        "bold.hovered":             { "$value": "{palette.amber.400}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.amber.950}", "$type": "color" },
+        "subtle.hovered":           { "$value": "{palette.amber.900}", "$type": "color" }
+      },
+      "info": {
+        "bold":                     { "$value": "{palette.sky.500}", "$type": "color" },
+        "bold.hovered":             { "$value": "{palette.sky.400}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.sky.950}", "$type": "color" },
+        "subtle.hovered":           { "$value": "{palette.sky.900}", "$type": "color" }
+      },
+      "neutral": {
+        "bold":                     { "$value": "{palette.slate.200}", "$type": "color" },
+        "bold.hovered":             { "$value": "{palette.slate.100}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.slate.800}", "$type": "color" },
+        "subtle.hovered":           { "$value": "{palette.slate.700}", "$type": "color" }
+      }
+    },
+    "text": {
+      "primary":                    { "$value": "{palette.slate.50}",  "$type": "color" },
+      "default":                    { "$value": "{palette.slate.100}", "$type": "color" },
+      "secondary":                  { "$value": "{palette.slate.300}", "$type": "color" },
+      "subtle":                     { "$value": "{palette.slate.400}", "$type": "color" },
+      "disabled":                   { "$value": "{palette.slate.600}", "$type": "color" },
+      "placeholder":                { "$value": "{palette.slate.500}", "$type": "color" },
+      "danger":                     { "$value": "{palette.red.400}",   "$type": "color" },
+      "success":                    { "$value": "{palette.green.400}", "$type": "color" },
+      "warning":                    { "$value": "{palette.amber.400}", "$type": "color" },
+      "info":                       { "$value": "{palette.sky.400}",   "$type": "color" },
+      "link":                       { "$value": "{palette.blue.400}",  "$type": "color" },
+      "link.hovered":               { "$value": "{palette.blue.300}",  "$type": "color" },
+      "on-primary": {
+        "bold":                     { "$value": "{palette.slate.950}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.blue.200}",  "$type": "color" }
+      },
+      "on-danger": {
+        "bold":                     { "$value": "{palette.slate.50}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.red.200}",  "$type": "color" }
+      },
+      "on-success": {
+        "bold":                     { "$value": "{palette.slate.950}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.green.200}", "$type": "color" }
+      },
+      "on-warning": {
+        "bold":                     { "$value": "{palette.slate.950}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.amber.200}", "$type": "color" }
+      },
+      "on-info": {
+        "bold":                     { "$value": "{palette.slate.50}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.sky.200}",  "$type": "color" }
+      },
+      "on-neutral": {
+        "bold":                     { "$value": "{palette.slate.900}", "$type": "color" },
+        "subtle":                   { "$value": "{palette.slate.200}", "$type": "color" }
+      }
+    },
+    "border": {
+      "default":                    { "$value": "{palette.slate.700}", "$type": "color" },
+      "subtle":                     { "$value": "{palette.slate.800}", "$type": "color" },
+      "strong":                     { "$value": "{palette.slate.600}", "$type": "color" },
+      "strong.hovered":             { "$value": "{palette.slate.500}", "$type": "color" },
+      "focused":                    { "$value": "{palette.blue.400}",  "$type": "color" },
+      "danger":                     { "$value": "{palette.red.500}",   "$type": "color" },
+      "success":                    { "$value": "{palette.green.500}", "$type": "color" },
+      "warning":                    { "$value": "{palette.amber.500}", "$type": "color" },
+      "info":                       { "$value": "{palette.sky.500}",   "$type": "color" },
+      "disabled":                   { "$value": "{palette.slate.700}", "$type": "color" }
+    },
+    "icon": {
+      "default":                    { "$value": "{palette.slate.400}", "$type": "color" },
+      "subtle":                     { "$value": "{palette.slate.500}", "$type": "color" },
+      "disabled":                   { "$value": "{palette.slate.600}", "$type": "color" },
+      "danger":                     { "$value": "{palette.red.400}",   "$type": "color" },
+      "success":                    { "$value": "{palette.green.400}", "$type": "color" },
+      "warning":                    { "$value": "{palette.amber.400}", "$type": "color" },
+      "info":                       { "$value": "{palette.sky.400}",   "$type": "color" },
+      "inverse":                    { "$value": "{palette.slate.950}", "$type": "color" }
+    }
+  },
+
+  "shadow": {
+    "$description": "Tier 1 — PRIMITIVE shadow scale (dark mode override). Dark mode uses heavier shadows (higher alpha) because they need to be visible against dark backgrounds where light-mode subtle shadows would disappear. Phase 3.1 (Volna 2): rebased on new named scale matching light theme.",
+    "none": { "$value": "none", "$type": "shadow" },
+    "xs":   { "$value": "0 1px 2px 0 rgba(0,0,0,0.5)", "$type": "shadow" },
+    "sm":   { "$value": "0 1px 3px 0 rgba(0,0,0,0.6), 0 1px 2px 0 rgba(0,0,0,0.4)", "$type": "shadow" },
+    "md":   { "$value": "0 4px 8px -1px rgba(0,0,0,0.6), 0 2px 4px -1px rgba(0,0,0,0.4)", "$type": "shadow" },
+    "lg":   { "$value": "0 12px 24px -4px rgba(0,0,0,0.7), 0 4px 8px -2px rgba(0,0,0,0.5)", "$type": "shadow" },
+    "xl":   { "$value": "0 24px 48px -8px rgba(0,0,0,0.8), 0 8px 16px -4px rgba(0,0,0,0.5)", "$type": "shadow" }
+  }
+}
