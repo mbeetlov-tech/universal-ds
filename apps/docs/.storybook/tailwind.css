@@ -1,0 +1,16 @@
+/* Load Inter from Google Fonts — matches --uds-primitive-font-family-sans token value */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+@import "tailwindcss";
+
+@source "../../../packages/components/src/**/*.{ts,tsx,mdx}";
+@source "../stories/**/*.{ts,tsx,mdx}";
+
+/* Apply Inter as document base font so all DS components inherit it */
+@layer base {
+  html,
+  body {
+    font-family: Inter, system-ui, -apple-system, sans-serif;
+    font-weight: 400;
+  }
+}

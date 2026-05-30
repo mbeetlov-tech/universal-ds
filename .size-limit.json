@@ -1,0 +1,14 @@
+[
+  {
+    "name": "@uds/tokens — tokens.css (uncompressed)",
+    "path": "packages/tokens/dist/tokens.css",
+    "limit": "50 kB",
+    "gzip": false
+  },
+  {
+    "name": "@uds/components — index.js (gzip)",
+    "path": "packages/components/dist/index.js",
+    "limit": "20 kB",
+    "gzip": true
+  }
+]

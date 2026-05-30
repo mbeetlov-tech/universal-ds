@@ -1,0 +1,26 @@
+{
+  "name": "universal-ds",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Universal Design System — monorepo root",
+  "packageManager": "pnpm@9.15.9",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=9"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "test:run": "pnpm -r test:run",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "storybook": "pnpm --filter @uds/docs storybook",
+    "changeset": "changeset",
+    "changeset:version": "changeset version",
+    "changeset:publish": "pnpm -r build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.7",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,0 +1,73 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    name: Test + Lint + Build + Bundle Size
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # --- Token build (must run before component tests) ---
+      - name: Build tokens
+        run: pnpm --filter @uds/tokens build
+
+      # --- Type check ---
+      - name: TypeScript — tokens
+        run: pnpm --filter @uds/tokens typecheck
+
+      - name: TypeScript — components
+        run: pnpm --filter @uds/components typecheck
+
+      # --- Tests ---
+      - name: Tests — tokens
+        run: pnpm --filter @uds/tokens test:run
+
+      - name: Tests — components
+        run: pnpm --filter @uds/components test:run
+
+      # --- Build components ---
+      - name: Build components
+        run: pnpm --filter @uds/components build
+
+      # --- Bundle size monitoring ---
+      - name: Bundle size check
+        run: |
+          # Report component bundle size — fail if it exceeds limit
+          TOKENS_CSS=$(wc -c < packages/tokens/dist/tokens.css)
+          COMP_JS=$(wc -c < packages/components/dist/index.js 2>/dev/null || echo "0")
+          echo "tokens.css: ${TOKENS_CSS} bytes"
+          echo "components/index.js: ${COMP_JS} bytes"
+
+          # Hard limit: tokens.css must not exceed 50KB uncompressed
+          if [ "$TOKENS_CSS" -gt 51200 ]; then
+            echo "ERROR: tokens.css exceeds 50KB limit ($TOKENS_CSS bytes)"
+            exit 1
+          fi
+
+          # Report only (no hard limit on components yet — first iteration)
+          echo "Bundle size check passed."
+
+      # --- Security ---
+      - name: npm audit
+        run: pnpm audit --audit-level=high
+        continue-on-error: true  # Report but don't fail CI on first iteration

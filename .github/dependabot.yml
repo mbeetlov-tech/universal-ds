@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+    open-pull-requests-limit: 10
+    groups:
+      # Group minor/patch dev dependency updates to reduce PR noise
+      dev-dependencies:
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+          - 'patch'
+        dependency-type: 'development'

@@ -1,0 +1,36 @@
+{
+  "name": "@uds/tokens",
+  "version": "0.1.0",
+  "description": "Universal DS — design tokens (CSS variables + TypeScript types)",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./css": "./dist/tokens.css",
+    "./css/light": "./dist/tokens.light.css",
+    "./css/dark": "./dist/tokens.dark.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "node scripts/copy-sources.js",
+    "build": "node build.js && tsc --project tsconfig.json",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "lint": "tsc --noEmit",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist src/tokens.json src/tokens.dark.json"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}
