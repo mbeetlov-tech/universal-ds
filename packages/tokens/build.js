@@ -226,6 +226,7 @@ const TIER_MAP = {
   // Primitive groups — prefixed with 'primitive-' to distinguish from semantic
   spacing:         { emit: true,  tier: 'primitive', prefix: ['primitive', 'spacing'] },
   radius:          { emit: true,  tier: 'primitive', prefix: ['primitive', 'radius'] },
+  size:            { emit: true,  tier: 'primitive', prefix: ['primitive', 'size'] },
   font:            { emit: true,  tier: 'primitive', prefix: ['primitive', 'font'] },
   shadow:          { emit: true,  tier: 'primitive', prefix: ['primitive', 'shadow'] },
 
@@ -235,6 +236,7 @@ const TIER_MAP = {
   // Semantic groups — short names without 'semantic-' prefix (public API)
   semanticSpacing: { emit: true,  tier: 'semantic',  prefix: ['spacing'] },
   semanticRadius:  { emit: true,  tier: 'semantic',  prefix: ['radius'] },
+  semanticSize:    { emit: true,  tier: 'semantic',  prefix: ['size'] },
   semanticShadow:  { emit: true,  tier: 'semantic',  prefix: ['shadow'] },
   typography:      { emit: true,  tier: 'semantic',  prefix: ['typography'] },
   color:           { emit: true,  tier: 'semantic',  prefix: ['color'] },
@@ -246,6 +248,9 @@ const TIER_MAP = {
   badge:           { emit: true,  tier: 'component', prefix: ['badge'] },
   tooltip:         { emit: true,  tier: 'component', prefix: ['tooltip'] },
   avatar:          { emit: true,  tier: 'component', prefix: ['avatar'] },
+  dialog:          { emit: true,  tier: 'component', prefix: ['dialog'] },
+  drawer:          { emit: true,  tier: 'component', prefix: ['drawer'] },
+  popover:         { emit: true,  tier: 'component', prefix: ['popover'] },
 };
 
 // Dynamically handle any unknown top-level groups (future components)
